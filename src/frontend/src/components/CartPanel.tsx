@@ -1,16 +1,14 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
+import { Minus, Plus, ShoppingBag, Tag, Trash2, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 import { useCart } from "../context/CartContext";
 
 const CATEGORY_EMOJI: Record<string, string> = {
   Fruits: "🍎",
   Vegetables: "🥦",
-  Dairy: "🥛",
-  Meat: "🥩",
-  Bakery: "🥖",
-  Beverages: "🥤",
   Snacks: "🍿",
   Deals: "🏷️",
 };
@@ -18,10 +16,6 @@ const CATEGORY_EMOJI: Record<string, string> = {
 const CATEGORY_BG: Record<string, string> = {
   Fruits: "bg-red-50",
   Vegetables: "bg-green-50",
-  Dairy: "bg-blue-50",
-  Meat: "bg-orange-50",
-  Bakery: "bg-amber-50",
-  Beverages: "bg-cyan-50",
   Snacks: "bg-yellow-50",
   Deals: "bg-purple-50",
 };
@@ -39,7 +33,34 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
     totalItems,
     totalPrice,
     clearCart,
+    promoCode,
+    promoDiscount,
+    applyPromoCode,
+    removePromoCode,
   } = useCart();
+
+  const [promoInput, setPromoInput] = useState("");
+  const [promoMessage, setPromoMessage] = useState<{
+    text: string;
+    success: boolean;
+  } | null>(null);
+
+  const handleApplyPromo = () => {
+    const result = applyPromoCode(promoInput);
+    setPromoMessage({ text: result.message, success: result.success });
+    if (result.success) setPromoInput("");
+  };
+
+  const handleRemovePromo = () => {
+    removePromoCode();
+    setPromoInput("");
+    setPromoMessage(null);
+  };
+
+  const deliveryCost = totalPrice >= 35 ? 0 : 4.99;
+  const discountAmount =
+    promoDiscount > 0 ? (totalPrice * promoDiscount) / 100 : 0;
+  const finalTotal = totalPrice - discountAmount + deliveryCost;
 
   return (
     <AnimatePresence>
@@ -55,7 +76,6 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
             data-ocid="cart.modal"
           />
 
-          {/* Panel – using <aside> so no role= override needed */}
           {/* biome-ignore lint/a11y/useSemanticElements: motion.div with aside semantics via role */}
           <motion.div
             initial={{ x: "100%" }}
@@ -149,7 +169,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
                           {item.product.name}
                         </p>
                         <p className="text-xs text-muted-foreground mt-0.5">
-                          ${item.product.price.toFixed(2)} each
+                          ₹{item.product.price.toFixed(2)} each
                         </p>
 
                         <div className="flex items-center justify-between mt-2">
@@ -190,7 +210,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
 
                           <div className="flex items-center gap-2">
                             <span className="font-bold text-sm">
-                              ${(item.product.price * item.quantity).toFixed(2)}
+                              ₹{(item.product.price * item.quantity).toFixed(2)}
                             </span>
                             <button
                               type="button"
@@ -213,27 +233,108 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
             {/* Footer */}
             {items.length > 0 && (
               <div className="border-t border-border px-5 py-4 space-y-3">
+                {/* Promo code section */}
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold text-foreground flex items-center gap-1">
+                    <Tag className="w-3.5 h-3.5 text-brand-green" />
+                    Promo Code
+                  </p>
+                  {promoCode ? (
+                    <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-xl px-3 py-2">
+                      <div>
+                        <span className="text-xs font-bold text-brand-green">
+                          {promoCode}
+                        </span>
+                        <span className="text-xs text-muted-foreground ml-1">
+                          ({promoDiscount}% off)
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleRemovePromo}
+                        className="text-xs text-muted-foreground hover:text-destructive transition-colors"
+                        data-ocid="cart.remove_promo.button"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex gap-2">
+                      <Input
+                        value={promoInput}
+                        onChange={(e) => {
+                          setPromoInput(e.target.value.toUpperCase());
+                          setPromoMessage(null);
+                        }}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && handleApplyPromo()
+                        }
+                        placeholder="Enter code (e.g. FRESH10)"
+                        className="h-8 text-xs rounded-xl flex-1"
+                        data-ocid="cart.promo_input"
+                      />
+                      <Button
+                        type="button"
+                        onClick={handleApplyPromo}
+                        size="sm"
+                        className="h-8 px-3 text-xs bg-brand-green hover:bg-brand-green-dark text-white rounded-xl"
+                        data-ocid="cart.apply_promo.button"
+                      >
+                        Apply
+                      </Button>
+                    </div>
+                  )}
+                  {promoMessage && !promoCode && (
+                    <p
+                      className={`text-xs ${
+                        promoMessage.success
+                          ? "text-brand-green"
+                          : "text-destructive"
+                      }`}
+                    >
+                      {promoMessage.text}
+                    </p>
+                  )}
+                </div>
+
+                <Separator />
+
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">
                     Subtotal ({totalItems} items)
                   </span>
-                  <span className="font-bold text-lg">
-                    ${totalPrice.toFixed(2)}
-                  </span>
+                  <span className="font-bold">₹{totalPrice.toFixed(2)}</span>
                 </div>
+
+                {promoDiscount > 0 && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-brand-green font-medium">
+                      Discount ({promoDiscount}%)
+                    </span>
+                    <span className="text-brand-green font-semibold">
+                      -₹{discountAmount.toFixed(2)}
+                    </span>
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Delivery</span>
                   <span className="text-brand-green font-semibold">
-                    {totalPrice >= 35 ? "Free" : "$4.99"}
+                    {deliveryCost === 0
+                      ? "Free"
+                      : `₹${deliveryCost.toFixed(2)}`}
                   </span>
                 </div>
+
                 <Separator />
+
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-base">Total</span>
                   <span className="font-extrabold text-xl text-foreground">
-                    ${(totalPrice + (totalPrice >= 35 ? 0 : 4.99)).toFixed(2)}
+                    ₹{finalTotal.toFixed(2)}
                   </span>
                 </div>
+
                 <Button
                   type="button"
                   className="w-full bg-brand-green hover:bg-brand-green-dark text-white font-semibold rounded-full h-12 text-base"

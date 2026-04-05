@@ -5,8 +5,18 @@ import type { CartItem, CartState } from "../types/cart";
 
 const CartContext = createContext<CartState | null>(null);
 
+// Valid promo codes: code -> discount percentage
+const PROMO_CODES: Record<string, number> = {
+  FRESH10: 10,
+  SAVE15: 15,
+  MART20: 20,
+  WELCOME25: 25,
+};
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [promoCode, setPromoCode] = useState("");
+  const [promoDiscount, setPromoDiscount] = useState(0);
 
   const addItem = useCallback((product: Product) => {
     setItems((prev) => {
@@ -34,7 +44,37 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const clearCart = useCallback(() => setItems([]), []);
+  const clearCart = useCallback(() => {
+    setItems([]);
+    setPromoCode("");
+    setPromoDiscount(0);
+  }, []);
+
+  const applyPromoCode = useCallback(
+    (code: string): { success: boolean; message: string } => {
+      const upper = code.trim().toUpperCase();
+      if (!upper)
+        return { success: false, message: "Please enter a promo code." };
+      if (PROMO_CODES[upper] !== undefined) {
+        setPromoCode(upper);
+        setPromoDiscount(PROMO_CODES[upper]);
+        return {
+          success: true,
+          message: `Promo code applied! ${PROMO_CODES[upper]}% off your order.`,
+        };
+      }
+      return {
+        success: false,
+        message: "Invalid promo code. Please try again.",
+      };
+    },
+    [],
+  );
+
+  const removePromoCode = useCallback(() => {
+    setPromoCode("");
+    setPromoDiscount(0);
+  }, []);
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
   const totalPrice = items.reduce(
@@ -52,6 +92,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
         clearCart,
         totalItems,
         totalPrice,
+        promoCode,
+        promoDiscount,
+        applyPromoCode,
+        removePromoCode,
       }}
     >
       {children}

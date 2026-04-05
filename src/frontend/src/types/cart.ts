@@ -13,4 +13,8 @@ export interface CartState {
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
+  promoCode: string;
+  promoDiscount: number;
+  applyPromoCode: (code: string) => { success: boolean; message: string };
+  removePromoCode: () => void;
 }

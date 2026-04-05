@@ -21,34 +21,6 @@ const CATEGORIES = [
     border: "border-green-100",
   },
   {
-    label: "Dairy & Eggs",
-    key: "Dairy",
-    emoji: "🥛",
-    bg: "bg-blue-50",
-    border: "border-blue-100",
-  },
-  {
-    label: "Meat & Seafood",
-    key: "Meat",
-    emoji: "🥩",
-    bg: "bg-orange-50",
-    border: "border-orange-100",
-  },
-  {
-    label: "Bakery",
-    key: "Bakery",
-    emoji: "🥖",
-    bg: "bg-amber-50",
-    border: "border-amber-100",
-  },
-  {
-    label: "Beverages",
-    key: "Beverages",
-    emoji: "🥤",
-    bg: "bg-cyan-50",
-    border: "border-cyan-100",
-  },
-  {
     label: "Snacks",
     key: "Snacks",
     emoji: "🍿",
@@ -88,7 +60,7 @@ export default function CategoryGrid({
           </button>
         </div>
 
-        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {CATEGORIES.map((cat, idx) => {
             const isActive =
               cat.key.toLowerCase() === activeCategory.toLowerCase();
@@ -102,7 +74,7 @@ export default function CategoryGrid({
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05, duration: 0.35 }}
-                className={`flex flex-col items-center gap-2 p-3 rounded-2xl border-2 transition-all duration-200 ${
+                className={`flex flex-col items-center gap-2 p-4 rounded-2xl border-2 transition-all duration-200 ${
                   isActive
                     ? "border-brand-green bg-accent shadow-md"
                     : `${cat.bg} ${cat.border} hover:border-brand-green/50 hover:shadow-card`
@@ -110,14 +82,14 @@ export default function CategoryGrid({
                 data-ocid={`categories.item.${idx + 1}`}
               >
                 <span
-                  className="text-2xl sm:text-3xl"
+                  className="text-3xl sm:text-4xl"
                   role="img"
                   aria-label={cat.label}
                 >
                   {cat.emoji}
                 </span>
                 <span
-                  className={`text-xs sm:text-sm font-semibold text-center leading-tight ${
+                  className={`text-sm font-semibold text-center leading-tight ${
                     isActive ? "text-brand-green" : "text-foreground"
                   }`}
                 >

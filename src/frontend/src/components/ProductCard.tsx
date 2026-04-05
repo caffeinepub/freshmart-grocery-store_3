@@ -11,10 +11,6 @@ interface ProductCardProps {
 const CATEGORY_EMOJI: Record<string, string> = {
   Fruits: "🍎",
   Vegetables: "🥦",
-  Dairy: "🥛",
-  Meat: "🥩",
-  Bakery: "🥖",
-  Beverages: "🥤",
   Snacks: "🍿",
   Deals: "🏷️",
 };
@@ -22,10 +18,6 @@ const CATEGORY_EMOJI: Record<string, string> = {
 const CATEGORY_BG: Record<string, string> = {
   Fruits: "bg-red-50",
   Vegetables: "bg-green-50",
-  Dairy: "bg-blue-50",
-  Meat: "bg-orange-50",
-  Bakery: "bg-amber-50",
-  Beverages: "bg-cyan-50",
   Snacks: "bg-yellow-50",
   Deals: "bg-purple-50",
 };
@@ -115,7 +107,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         {/* Price + CTA */}
         <div className="flex items-center justify-between gap-2 mt-auto">
           <span className="font-bold text-lg text-foreground">
-            ${product.price.toFixed(2)}
+            ₹{product.price.toFixed(2)}
           </span>
           <button
             type="button"

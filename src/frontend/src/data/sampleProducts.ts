@@ -92,6 +92,50 @@ export const SAMPLE_PRODUCTS: Product[] = [
     imageUrl:
       "/assets/generated/product-cherry-tomatoes-transparent.dim_400x400.png",
   },
+  {
+    id: BigInt(23),
+    name: "Kiwi Fruit (6-pack)",
+    description:
+      "Tangy-sweet kiwis loaded with vitamin C and antioxidants. Great for salads and smoothies.",
+    category: "Fruits",
+    price: 3.49,
+    rating: 4.6,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(24),
+    name: "Pomegranate",
+    description:
+      "Juicy pomegranate packed with antioxidants. Perfect for juicing or adding to salads.",
+    category: "Fruits",
+    price: 4.29,
+    rating: 4.7,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(25),
+    name: "Fresh Lychee (500g)",
+    description:
+      "Sweet and fragrant lychees, peeled and ready to enjoy as a tropical treat.",
+    category: "Fruits",
+    price: 5.99,
+    rating: 4.8,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(26),
+    name: "Watermelon (Whole)",
+    description:
+      "Refreshingly sweet seedless watermelon. Hydrating and perfect for summer days.",
+    category: "Fruits",
+    price: 7.99,
+    rating: 4.7,
+    inStock: true,
+    imageUrl: "",
+  },
 
   // ── Vegetables ────────────────────────────────────────────────────────────
   {
@@ -172,80 +216,71 @@ export const SAMPLE_PRODUCTS: Product[] = [
     inStock: true,
     imageUrl: "/assets/generated/product-cucumber-transparent.dim_400x400.png",
   },
-
-  // ── Dairy ─────────────────────────────────────────────────────────────────
   {
-    id: BigInt(5),
-    name: "Whole Milk (1 Gallon)",
+    id: BigInt(27),
+    name: "Sweet Corn (4-pack)",
     description:
-      "Rich, creamy whole milk from grass-fed cows. No artificial hormones.",
-    category: "Dairy",
-    price: 5.99,
-    rating: 4.9,
-    inStock: true,
-    imageUrl: "/assets/generated/product-milk-transparent.dim_400x400.png",
-  },
-  {
-    id: BigInt(6),
-    name: "Free-Range Large Eggs (12ct)",
-    description:
-      "Farm-fresh eggs from free-range hens raised on a vegetarian diet.",
-    category: "Dairy",
-    price: 6.49,
-    rating: 4.8,
-    inStock: true,
-    imageUrl: "/assets/generated/product-eggs-transparent.dim_400x400.png",
-  },
-  {
-    id: BigInt(11),
-    name: "Greek Yogurt (32oz)",
-    description:
-      "Thick, creamy plain Greek yogurt. High protein, live active cultures.",
-    category: "Dairy",
-    price: 7.99,
-    rating: 4.7,
-    inStock: true,
-    imageUrl: "/assets/generated/product-yogurt-transparent.dim_400x400.png",
-  },
-
-  // ── Meat ──────────────────────────────────────────────────────────────────
-  {
-    id: BigInt(7),
-    name: "Atlantic Salmon Fillet",
-    description:
-      "Premium, wild-caught Atlantic salmon. Rich in Omega-3 fatty acids.",
-    category: "Meat",
-    price: 12.99,
-    rating: 4.7,
-    inStock: true,
-    imageUrl: "/assets/generated/product-salmon-transparent.dim_400x400.png",
-  },
-
-  // ── Bakery ────────────────────────────────────────────────────────────────
-  {
-    id: BigInt(8),
-    name: "Artisan Sourdough Bread",
-    description:
-      "Naturally leavened sourdough with a chewy crust and tangy flavor.",
-    category: "Bakery",
-    price: 7.49,
-    rating: 4.9,
-    inStock: true,
-    imageUrl: "/assets/generated/product-sourdough-transparent.dim_400x400.png",
-  },
-
-  // ── Beverages ─────────────────────────────────────────────────────────────
-  {
-    id: BigInt(9),
-    name: "Sparkling Water Variety Pack",
-    description:
-      "12 cans of assorted flavored sparkling waters. Zero calories, no sugar.",
-    category: "Beverages",
-    price: 8.99,
+      "Farm-fresh sweet corn on the cob. Perfect for grilling, boiling, or roasting.",
+    category: "Vegetables",
+    price: 3.49,
     rating: 4.6,
     inStock: true,
-    imageUrl:
-      "/assets/generated/product-sparkling-water-transparent.dim_400x400.png",
+    imageUrl: "",
+  },
+  {
+    id: BigInt(28),
+    name: "Green Peas (500g)",
+    description:
+      "Tender, sweet green peas. Great for curries, rice dishes, and stir-fries.",
+    category: "Vegetables",
+    price: 2.29,
+    rating: 4.4,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(29),
+    name: "Cauliflower (Head)",
+    description:
+      "Fresh white cauliflower, versatile for roasting, curries, and stir-fries.",
+    category: "Vegetables",
+    price: 3.19,
+    rating: 4.5,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(30),
+    name: "Fresh Ginger Root (250g)",
+    description:
+      "Aromatic and spicy ginger root. Essential for Indian cooking and herbal teas.",
+    category: "Vegetables",
+    price: 1.79,
+    rating: 4.7,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(31),
+    name: "Garlic Bulbs (3-pack)",
+    description:
+      "Pungent, flavourful garlic bulbs. A must-have for every kitchen.",
+    category: "Vegetables",
+    price: 1.99,
+    rating: 4.8,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(32),
+    name: "Bottle Gourd (Lauki)",
+    description:
+      "Fresh and tender bottle gourd. Light, nutritious, and great for dals and curries.",
+    category: "Vegetables",
+    price: 2.49,
+    rating: 4.3,
+    inStock: true,
+    imageUrl: "",
   },
 
   // ── Snacks ────────────────────────────────────────────────────────────────
@@ -259,5 +294,71 @@ export const SAMPLE_PRODUCTS: Product[] = [
     rating: 4.4,
     inStock: true,
     imageUrl: "/assets/generated/product-chips-transparent.dim_400x400.png",
+  },
+  {
+    id: BigInt(33),
+    name: "Roasted Mixed Nuts (250g)",
+    description:
+      "Crunchy mix of cashews, almonds, and peanuts lightly roasted with sea salt.",
+    category: "Snacks",
+    price: 6.99,
+    rating: 4.7,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(34),
+    name: "Masala Peanuts (200g)",
+    description:
+      "Spicy roasted peanuts coated in a tangy masala blend. Addictively crunchy.",
+    category: "Snacks",
+    price: 2.49,
+    rating: 4.6,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(35),
+    name: "Khakhra (Methi) (200g)",
+    description:
+      "Crispy thin flatbread crackers flavoured with fenugreek. A healthy Indian snack.",
+    category: "Snacks",
+    price: 3.29,
+    rating: 4.5,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(36),
+    name: "Popcorn (Butter & Salt)",
+    description:
+      "Light and airy butter-salted popcorn. Perfect for movie nights.",
+    category: "Snacks",
+    price: 2.99,
+    rating: 4.4,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(37),
+    name: "Rice Cakes (Plain, 10-pack)",
+    description:
+      "Light, gluten-free rice cakes with a satisfying crunch. Great with toppings.",
+    category: "Snacks",
+    price: 3.49,
+    rating: 4.3,
+    inStock: true,
+    imageUrl: "",
+  },
+  {
+    id: BigInt(38),
+    name: "Trail Mix (Tropical, 300g)",
+    description:
+      "Energising blend of dried mango, pineapple, cashews, and raisins.",
+    category: "Snacks",
+    price: 5.49,
+    rating: 4.6,
+    inStock: true,
+    imageUrl: "",
   },
 ];

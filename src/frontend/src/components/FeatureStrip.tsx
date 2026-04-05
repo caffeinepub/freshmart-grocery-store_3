@@ -6,7 +6,7 @@ const FEATURES = [
     icon: Truck,
     title: "Free Delivery",
     description:
-      "Free delivery on all orders over $35. Fast, reliable, same-day options available.",
+      "Free delivery on all orders over $35. Delivered to your door in 6–7 days.",
     color: "text-brand-green",
     bg: "bg-green-50",
   },

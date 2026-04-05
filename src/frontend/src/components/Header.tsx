@@ -12,17 +12,7 @@ interface HeaderProps {
   activeCategory: string;
 }
 
-const CATEGORIES = [
-  "Shop All",
-  "Fruits",
-  "Vegetables",
-  "Dairy",
-  "Meat",
-  "Bakery",
-  "Beverages",
-  "Snacks",
-  "Deals",
-];
+const CATEGORIES = ["Shop All", "Fruits", "Vegetables", "Snacks", "Deals"];
 
 export default function Header({
   searchQuery,
@@ -106,7 +96,7 @@ export default function Header({
                   )}
                 </span>
                 {totalItems > 0 && (
-                  <span className="font-bold">${totalPrice.toFixed(2)}</span>
+                  <span className="font-bold">₹{totalPrice.toFixed(2)}</span>
                 )}
               </button>
 

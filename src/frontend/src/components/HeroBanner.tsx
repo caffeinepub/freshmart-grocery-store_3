@@ -47,7 +47,7 @@ export default function HeroBanner({ onShopNow }: HeroBannerProps) {
           </h1>
           <p className="text-white/85 text-lg mb-8 max-w-sm leading-relaxed">
             Shop the freshest produce, dairy, bakery, and more — delivered to
-            your door in under 2 hours.
+            your door in 6–7 days.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <button
