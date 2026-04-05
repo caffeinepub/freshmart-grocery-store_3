@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Brand greens */
+    --background: 1 0 0;
+    --foreground: 0.13 0.02 264;
+
+    --card: 1 0 0;
+    --card-foreground: 0.13 0.02 264;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.13 0.02 264;
+
+    /* Primary = brand green #2E7D32 */
+    --primary: 0.51 0.15 145;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary = light gray */
+    --secondary: 0.96 0.005 145;
+    --secondary-foreground: 0.13 0.02 264;
+
+    --muted: 0.96 0.005 145;
+    --muted-foreground: 0.47 0.015 260;
+
+    --accent: 0.92 0.025 145;
+    --accent-foreground: 0.51 0.15 145;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.91 0.01 145;
+    --input: 0.91 0.01 145;
+    --ring: 0.51 0.15 145;
+
+    /* Brand tokens */
+    --brand-green: 0.51 0.15 145;
+    --brand-green-dark: 0.37 0.11 145;
+    --brand-green-footer: 0.26 0.08 145;
+    --brand-green-footer-deep: 0.21 0.06 145;
+    --brand-star: 0.82 0.18 72;
+    --brand-section-bg: 0.97 0.006 145;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.51 0.15 145;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.51 0.15 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", "Figtree", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-brand-green {
+    background-color: oklch(var(--brand-green));
+  }
+  .bg-brand-green-dark {
+    background-color: oklch(var(--brand-green-dark));
+  }
+  .bg-brand-footer {
+    background-color: oklch(var(--brand-green-footer));
+  }
+  .bg-brand-footer-deep {
+    background-color: oklch(var(--brand-green-footer-deep));
+  }
+  .bg-brand-section {
+    background-color: oklch(var(--brand-section-bg));
+  }
+  .text-brand-green {
+    color: oklch(var(--brand-green));
+  }
+  .text-brand-green-dark {
+    color: oklch(var(--brand-green-dark));
+  }
+  .text-star {
+    color: oklch(var(--brand-star));
+  }
+  .border-brand-green {
+    border-color: oklch(var(--brand-green));
+  }
+  .hover\:bg-brand-green-dark:hover {
+    background-color: oklch(var(--brand-green-dark));
+  }
+  .hover\:text-brand-green:hover {
+    color: oklch(var(--brand-green));
+  }
+}
