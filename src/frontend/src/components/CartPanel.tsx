@@ -57,7 +57,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
     setPromoMessage(null);
   };
 
-  const deliveryCost = totalPrice >= 35 ? 0 : 4.99;
+  const deliveryCost = totalPrice >= 999 ? 0 : 99;
   const discountAmount =
     promoDiscount > 0 ? (totalPrice * promoDiscount) / 100 : 0;
   const finalTotal = totalPrice - discountAmount + deliveryCost;
@@ -169,7 +169,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
                           {item.product.name}
                         </p>
                         <p className="text-xs text-muted-foreground mt-0.5">
-                          ₹{item.product.price.toFixed(2)} each
+                          ₹{item.product.price} each
                         </p>
 
                         <div className="flex items-center justify-between mt-2">
@@ -210,7 +210,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
 
                           <div className="flex items-center gap-2">
                             <span className="font-bold text-sm">
-                              ₹{(item.product.price * item.quantity).toFixed(2)}
+                              ₹{item.product.price * item.quantity}
                             </span>
                             <button
                               type="button"
@@ -303,7 +303,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
                   <span className="text-muted-foreground">
                     Subtotal ({totalItems} items)
                   </span>
-                  <span className="font-bold">₹{totalPrice.toFixed(2)}</span>
+                  <span className="font-bold">₹{totalPrice}</span>
                 </div>
 
                 {promoDiscount > 0 && (
@@ -312,7 +312,7 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
                       Discount ({promoDiscount}%)
                     </span>
                     <span className="text-brand-green font-semibold">
-                      -₹{discountAmount.toFixed(2)}
+                      -₹{discountAmount.toFixed(0)}
                     </span>
                   </div>
                 )}
@@ -320,18 +320,22 @@ export default function CartPanel({ isOpen, onClose }: CartPanelProps) {
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Delivery</span>
                   <span className="text-brand-green font-semibold">
-                    {deliveryCost === 0
-                      ? "Free"
-                      : `₹${deliveryCost.toFixed(2)}`}
+                    {deliveryCost === 0 ? "Free" : `₹${deliveryCost}`}
                   </span>
                 </div>
+
+                {totalPrice < 999 && (
+                  <p className="text-xs text-muted-foreground">
+                    Add ₹{999 - totalPrice} more for free delivery
+                  </p>
+                )}
 
                 <Separator />
 
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-base">Total</span>
                   <span className="font-extrabold text-xl text-foreground">
-                    ₹{finalTotal.toFixed(2)}
+                    ₹{Math.round(finalTotal)}
                   </span>
                 </div>
 

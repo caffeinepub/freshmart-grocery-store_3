@@ -8,7 +8,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Crisp, sweet apples sourced from local farms. Perfect for snacking or baking.",
     category: "Fruits",
-    price: 4.99,
+    price: 199,
     rating: 4.8,
     inStock: true,
     imageUrl: "/assets/generated/product-apples-transparent.dim_400x400.png",
@@ -19,7 +19,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Hand-picked, perfectly ripe avocados. Creamy texture, ready to eat.",
     category: "Fruits",
-    price: 5.49,
+    price: 249,
     rating: 4.7,
     inStock: true,
     imageUrl: "/assets/generated/product-avocados-transparent.dim_400x400.png",
@@ -30,7 +30,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Perfectly ripe yellow bananas, rich in potassium and natural energy.",
     category: "Fruits",
-    price: 1.49,
+    price: 49,
     rating: 4.6,
     inStock: true,
     imageUrl: "/assets/generated/product-bananas-transparent.dim_400x400.png",
@@ -41,7 +41,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Juicy, seedless navel oranges packed with vitamin C. Great for juicing or snacking.",
     category: "Fruits",
-    price: 3.99,
+    price: 129,
     rating: 4.7,
     inStock: true,
     imageUrl: "/assets/generated/product-oranges-transparent.dim_400x400.png",
@@ -52,29 +52,29 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Sweet and buttery Ataulfo mango with minimal fiber. Perfect for smoothies and desserts.",
     category: "Fruits",
-    price: 2.29,
+    price: 89,
     rating: 4.8,
     inStock: true,
     imageUrl: "/assets/generated/product-mango-transparent.dim_400x400.png",
   },
   {
     id: BigInt(16),
-    name: "Red Seedless Grapes (1 lb)",
+    name: "Red Seedless Grapes (500g)",
     description:
       "Plump, sweet red seedless grapes. Washed and ready to enjoy straight from the bag.",
     category: "Fruits",
-    price: 4.49,
+    price: 179,
     rating: 4.5,
     inStock: true,
     imageUrl: "/assets/generated/product-grapes-transparent.dim_400x400.png",
   },
   {
     id: BigInt(17),
-    name: "Fresh Strawberries (1 lb)",
+    name: "Fresh Strawberries (500g)",
     description:
       "Bright red, locally sourced strawberries bursting with sweetness.",
     category: "Fruits",
-    price: 3.99,
+    price: 149,
     rating: 4.9,
     inStock: true,
     imageUrl:
@@ -86,7 +86,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Bite-sized heirloom cherry tomatoes. Bursting with sweet flavor.",
     category: "Fruits",
-    price: 3.99,
+    price: 99,
     rating: 4.6,
     inStock: true,
     imageUrl:
@@ -98,10 +98,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Tangy-sweet kiwis loaded with vitamin C and antioxidants. Great for salads and smoothies.",
     category: "Fruits",
-    price: 3.49,
+    price: 119,
     rating: 4.6,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-kiwi-transparent.dim_400x400.png",
   },
   {
     id: BigInt(24),
@@ -109,10 +109,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Juicy pomegranate packed with antioxidants. Perfect for juicing or adding to salads.",
     category: "Fruits",
-    price: 4.29,
+    price: 159,
     rating: 4.7,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-pomegranate-transparent.dim_400x400.png",
   },
   {
     id: BigInt(25),
@@ -120,10 +121,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Sweet and fragrant lychees, peeled and ready to enjoy as a tropical treat.",
     category: "Fruits",
-    price: 5.99,
+    price: 199,
     rating: 4.8,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-lychee-transparent.dim_400x400.png",
   },
   {
     id: BigInt(26),
@@ -131,10 +132,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Refreshingly sweet seedless watermelon. Hydrating and perfect for summer days.",
     category: "Fruits",
-    price: 7.99,
+    price: 299,
     rating: 4.7,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-watermelon-transparent.dim_400x400.png",
   },
 
   // ── Vegetables ────────────────────────────────────────────────────────────
@@ -144,7 +146,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Tender young spinach leaves, triple-washed and ready to serve.",
     category: "Vegetables",
-    price: 3.29,
+    price: 79,
     rating: 4.6,
     inStock: true,
     imageUrl: "/assets/generated/product-spinach-transparent.dim_400x400.png",
@@ -155,18 +157,18 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Vibrant green broccoli, packed with nutrients. Great for stir-fries.",
     category: "Vegetables",
-    price: 2.79,
+    price: 69,
     rating: 4.5,
     inStock: true,
     imageUrl: "/assets/generated/product-broccoli-transparent.dim_400x400.png",
   },
   {
     id: BigInt(18),
-    name: "Baby Carrots (1 lb bag)",
+    name: "Baby Carrots (500g)",
     description:
       "Crunchy, sweet baby carrots washed and peeled. Great for snacking and cooking.",
     category: "Vegetables",
-    price: 2.49,
+    price: 59,
     rating: 4.5,
     inStock: true,
     imageUrl: "/assets/generated/product-carrots-transparent.dim_400x400.png",
@@ -177,7 +179,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Red, yellow, and green bell peppers. Crisp, sweet, and perfect for any dish.",
     category: "Vegetables",
-    price: 4.99,
+    price: 149,
     rating: 4.6,
     inStock: true,
     imageUrl:
@@ -185,22 +187,22 @@ export const SAMPLE_PRODUCTS: Product[] = [
   },
   {
     id: BigInt(20),
-    name: "Russet Potatoes (5 lb bag)",
+    name: "Russet Potatoes (2 kg)",
     description:
       "Classic russet potatoes perfect for baking, mashing, or frying.",
     category: "Vegetables",
-    price: 5.49,
+    price: 89,
     rating: 4.4,
     inStock: true,
     imageUrl: "/assets/generated/product-potatoes-transparent.dim_400x400.png",
   },
   {
     id: BigInt(21),
-    name: "Sweet Yellow Onions (3 lb bag)",
+    name: "Sweet Yellow Onions (1 kg)",
     description:
       "Mild, sweet yellow onions. A kitchen staple for soups, sautés, and salads.",
     category: "Vegetables",
-    price: 3.79,
+    price: 49,
     rating: 4.3,
     inStock: true,
     imageUrl: "/assets/generated/product-onions-transparent.dim_400x400.png",
@@ -211,7 +213,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Long, thin-skinned seedless cucumber. Cool and crisp for salads and snacking.",
     category: "Vegetables",
-    price: 1.99,
+    price: 39,
     rating: 4.5,
     inStock: true,
     imageUrl: "/assets/generated/product-cucumber-transparent.dim_400x400.png",
@@ -222,10 +224,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Farm-fresh sweet corn on the cob. Perfect for grilling, boiling, or roasting.",
     category: "Vegetables",
-    price: 3.49,
+    price: 79,
     rating: 4.6,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-sweet-corn-transparent.dim_400x400.png",
   },
   {
     id: BigInt(28),
@@ -233,10 +236,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Tender, sweet green peas. Great for curries, rice dishes, and stir-fries.",
     category: "Vegetables",
-    price: 2.29,
+    price: 59,
     rating: 4.4,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-green-peas-transparent.dim_400x400.png",
   },
   {
     id: BigInt(29),
@@ -244,10 +248,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Fresh white cauliflower, versatile for roasting, curries, and stir-fries.",
     category: "Vegetables",
-    price: 3.19,
+    price: 69,
     rating: 4.5,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-cauliflower-transparent.dim_400x400.png",
   },
   {
     id: BigInt(30),
@@ -255,10 +260,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Aromatic and spicy ginger root. Essential for Indian cooking and herbal teas.",
     category: "Vegetables",
-    price: 1.79,
+    price: 49,
     rating: 4.7,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-ginger-transparent.dim_400x400.png",
   },
   {
     id: BigInt(31),
@@ -266,10 +271,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Pungent, flavourful garlic bulbs. A must-have for every kitchen.",
     category: "Vegetables",
-    price: 1.99,
+    price: 39,
     rating: 4.8,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-garlic-transparent.dim_400x400.png",
   },
   {
     id: BigInt(32),
@@ -277,10 +282,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Fresh and tender bottle gourd. Light, nutritious, and great for dals and curries.",
     category: "Vegetables",
-    price: 2.49,
+    price: 45,
     rating: 4.3,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-bottle-gourd-transparent.dim_400x400.png",
   },
 
   // ── Snacks ────────────────────────────────────────────────────────────────
@@ -290,7 +296,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Stone-ground corn chips with sea salt. Certified organic, non-GMO.",
     category: "Snacks",
-    price: 4.29,
+    price: 149,
     rating: 4.4,
     inStock: true,
     imageUrl: "/assets/generated/product-chips-transparent.dim_400x400.png",
@@ -301,10 +307,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Crunchy mix of cashews, almonds, and peanuts lightly roasted with sea salt.",
     category: "Snacks",
-    price: 6.99,
+    price: 299,
     rating: 4.7,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-mixed-nuts-transparent.dim_400x400.png",
   },
   {
     id: BigInt(34),
@@ -312,10 +319,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Spicy roasted peanuts coated in a tangy masala blend. Addictively crunchy.",
     category: "Snacks",
-    price: 2.49,
+    price: 79,
     rating: 4.6,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-masala-peanuts-transparent.dim_400x400.png",
   },
   {
     id: BigInt(35),
@@ -323,10 +331,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Crispy thin flatbread crackers flavoured with fenugreek. A healthy Indian snack.",
     category: "Snacks",
-    price: 3.29,
+    price: 99,
     rating: 4.5,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-khakhra-transparent.dim_400x400.png",
   },
   {
     id: BigInt(36),
@@ -334,10 +342,10 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Light and airy butter-salted popcorn. Perfect for movie nights.",
     category: "Snacks",
-    price: 2.99,
+    price: 69,
     rating: 4.4,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-popcorn-transparent.dim_400x400.png",
   },
   {
     id: BigInt(37),
@@ -345,10 +353,11 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Light, gluten-free rice cakes with a satisfying crunch. Great with toppings.",
     category: "Snacks",
-    price: 3.49,
+    price: 89,
     rating: 4.3,
     inStock: true,
-    imageUrl: "",
+    imageUrl:
+      "/assets/generated/product-rice-cakes-transparent.dim_400x400.png",
   },
   {
     id: BigInt(38),
@@ -356,9 +365,9 @@ export const SAMPLE_PRODUCTS: Product[] = [
     description:
       "Energising blend of dried mango, pineapple, cashews, and raisins.",
     category: "Snacks",
-    price: 5.49,
+    price: 199,
     rating: 4.6,
     inStock: true,
-    imageUrl: "",
+    imageUrl: "/assets/generated/product-trail-mix-transparent.dim_400x400.png",
   },
 ];

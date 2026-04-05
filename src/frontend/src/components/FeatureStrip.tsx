@@ -6,7 +6,7 @@ const FEATURES = [
     icon: Truck,
     title: "Free Delivery",
     description:
-      "Free delivery on all orders over $35. Delivered to your door in 6–7 days.",
+      "Free delivery on all orders over ₹999. Delivered to your door in 6–7 days.",
     color: "text-brand-green",
     bg: "bg-green-50",
   },
@@ -39,25 +39,25 @@ export default function FeatureStrip() {
           Why Shop FreshMart?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {FEATURES.map((feat, idx) => (
+          {FEATURES.map((feature) => (
             <motion.div
-              key={feat.title}
+              key={feature.title}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.4 }}
-              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border hover:shadow-card transition-shadow duration-200"
-              data-ocid={`features.item.${idx + 1}`}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card"
             >
               <div
-                className={`w-14 h-14 rounded-2xl ${feat.bg} flex items-center justify-center mb-4`}
+                className={`w-12 h-12 rounded-full ${feature.bg} flex items-center justify-center mb-4`}
               >
-                <feat.icon className={`w-7 h-7 ${feat.color}`} />
+                <feature.icon className={`w-6 h-6 ${feature.color}`} />
               </div>
-              <h3 className="font-heading font-bold text-lg text-foreground mb-2">
-                {feat.title}
+              <h3 className="font-heading font-bold text-base text-foreground mb-2">
+                {feature.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                {feat.description}
+                {feature.description}
               </p>
             </motion.div>
           ))}
